@@ -12,6 +12,7 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 import seaborn as sns
+############
 
 # Common Declarations and Functions
 
@@ -22,6 +23,7 @@ acgt = {"A": 0,
         "G": 2,
         "T": 3}
 tgca = ["A", "C", "G", "T"]
+
 
 
 # https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
@@ -157,7 +159,6 @@ def get_stages(args):
 
     return run_stages
 
-
 def load_vars(vars_fname, clu_fname):
     vars_df = pd.read_csv(vars_fname, names=["seqid", "type", "pos", "query", "ref"])
     vars_df["pos"] = vars_df["pos"].astype(int)
@@ -292,7 +293,6 @@ def load_parents(parents_fname, mat):
 
     return parents_dict
 
-
 # Main Methods
 
 def clean(args):
@@ -377,7 +377,7 @@ def align(args, bolotie_path):
                "-t", str(args.threads),
                "-l", str(args.trim_len)]
     sys.stderr.write("command: " + " ".join(aln_cmd) + "\n")
-    ret = subprocess.call(aln_cmd)
+    ret = subprocess.call(aln_cmd,shell=True)
     if ret != 0:
         sys.stderr.write("Non-zero exit code in alignment")
         exit(1)
@@ -402,7 +402,7 @@ def consensus(args, bolotie_path):
                      "-m", str(args.freq_threshold),
                      "-d"]
     sys.stderr.write("command: " + " ".join(cons4tree_cmd) + "\n")
-    ret = subprocess.call(cons4tree_cmd)
+    ret = subprocess.call(cons4tree_cmd,shell=True)
     if ret != 0:
         sys.stderr.write("Non-zero exit code in consensus 4 tree")
         exit(1)
@@ -426,7 +426,7 @@ def consensus(args, bolotie_path):
                      "-o", od + "cons4prob",
                      "-m", str(args.freq_threshold)]
     sys.stderr.write("command: " + " ".join(cons4prob_cmd) + "\n")
-    ret = subprocess.call(cons4prob_cmd)
+    ret = subprocess.call(cons4prob_cmd,shell=True)
     if ret != 0:
         sys.stderr.write("Non-zero exit code in consensus for probability")
         exit(1)
@@ -449,7 +449,7 @@ def consensus(args, bolotie_path):
                        "-i", od + "aln.vars.csv",
                        "-o", od + "cons4parent"]
     sys.stderr.write("command: " + " ".join(cons4parent_cmd) + "\n")
-    ret = subprocess.call(cons4parent_cmd)
+    ret = subprocess.call(cons4parent_cmd,shell=True)
     if ret != 0:
         sys.stderr.write("Non-zero exit code in consensus for parents")
         exit(1)
@@ -472,7 +472,7 @@ def index(args, bolotie_path):
                  "-i", od + "cons4prob.fa",
                  "-c", od + "query.clus"]
     sys.stderr.write("command: " + " ".join(build_cmd) + "\n")
-    ret = subprocess.call(build_cmd)
+    ret = subprocess.call(build_cmd,shell=True)
     if ret != 0:
         sys.stderr.write("Non-zero exit code in indexing")
         exit(1)
@@ -498,7 +498,7 @@ def paths(args, bolotie_path):
                 "-o", od + "paths",
                 "-r"]
     sys.stderr.write("command: " + " ".join(path_cmd) + "\n")
-    ret = subprocess.call(path_cmd)
+    ret = subprocess.call(path_cmd,shell=True)
     if ret != 0:
         sys.stderr.write("Non-zero exit code in path finding")
         exit(1)
@@ -522,7 +522,7 @@ def parents(args, bolotie_path):
                    "-p", od + "paths",
                    "-o", od + "parents"]
     sys.stderr.write("command: " + " ".join(parents_cmd) + "\n")
-    ret = subprocess.call(parents_cmd)
+    ret = subprocess.call(parents_cmd,shell=True)
     if ret != 0:
         sys.stderr.write("Non-zero exit code in parents finding")
         exit(1)
@@ -637,12 +637,12 @@ def wrapper(args):
     sys.stderr.write("Running stages: " + ", ".join(run_stages) + "\n")
 
     cur_path = os.path.dirname(os.path.abspath(__file__))
-    bolotie_path = cur_path + "/bolotie"
+    bolotie_path = cur_path + "\\src\\bolotie.cpp"
     if not os.path.exists(bolotie_path):
         found = False
-        for tmp_path in glob.glob(cur_path + "/*/*"):
+        for tmp_path in glob.glob(cur_path + "\\src\\*"):
             tmp_fname = tmp_path.split("/")[-1]
-            if tmp_fname == "bolotie":
+            if tmp_fname == bolotie_path:
                 bolotie_path = tmp_path
                 found = True
                 break
@@ -759,3 +759,5 @@ def main(args):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+
+

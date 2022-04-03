@@ -1,0 +1,31 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "132.66.207.29",
+            "port": 9100,
+            "driver": "MySQL",
+            "name": "Covid",
+            "database": "covdb_dev",
+            "username": "admin",
+            "password": "secretpass1"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "132.66.207.29",
+            "port": 9100,
+            "driver": "MySQL",
+            "name": "CovDB",
+            "database": "covdb",
+            "username": "admin",
+            "password": "secretpass1"
+        }
+    ]
+}

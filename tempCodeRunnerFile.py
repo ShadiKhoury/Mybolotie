@@ -1,0 +1,1 @@
+בודות/ShomronLab/Mybolotie/sequence.txt --outdir c:/Users/shade/Desktop/עבודות/ShomronLab/bolotie") 
