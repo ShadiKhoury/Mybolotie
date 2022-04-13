@@ -8,22 +8,9 @@
             "previewLimit": 50,
             "server": "132.66.207.29",
             "port": 9100,
-            "driver": "MySQL",
-            "name": "Covid",
-            "database": "covdb_dev",
-            "username": "admin",
-            "password": "secretpass1"
-        },
-        {
-            "mysqlOptions": {
-                "authProtocol": "default"
-            },
-            "previewLimit": 50,
-            "server": "132.66.207.29",
-            "port": 9100,
-            "driver": "MySQL",
-            "name": "CovDB",
-            "database": "covdb",
+            "driver": "MariaDB",
+            "name": "Covid Data",
+            "database": "covdb_dev_2",
             "username": "admin",
             "password": "secretpass1"
         }
