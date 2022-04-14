@@ -9,8 +9,8 @@
 
 
 import os
-os.system("python run.py --input  c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequnecs.txt --reference c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequence.txt --outdir c:/Users/shade/Desktop/עבודות/ShomronLab/bolotie --cluster c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/clade.txt")
-
+#os.system("python run.py --input  c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequnecs.txt --reference c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequence.txt --outdir c:/Users/shade/Desktop/עבודות/ShomronLab/bolotie --cluster c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/clade.txt")
+os.system("python run.py --input c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/my_fasta.txt --reference c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequence.txt --outdir c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie --clusters c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/cluster.txt")
 
 #import run
 #run.main(['--input', 'c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequnecs.txt','--reference','c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequence.txt','--outdir','c:/Users/shade/Desktop/עבודות/ShomronLab/bolotie'])

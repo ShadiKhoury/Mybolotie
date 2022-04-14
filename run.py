@@ -638,6 +638,7 @@ def wrapper(args):
 
     cur_path = os.path.dirname(os.path.abspath(__file__))
     bolotie_path = cur_path + "\\src\\bolotie.cpp"
+    bolotie_path = bolotie_path.replace(os.sep, '/')
     if not os.path.exists(bolotie_path):
         found = False
         for tmp_path in glob.glob(cur_path + "\\src\\*"):

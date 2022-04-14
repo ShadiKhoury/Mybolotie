@@ -7,10 +7,11 @@
         {
             "name": "Python: Current File",
             "type": "python",
+            "justMyCode":false,
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["--input", "c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequnecs.txt","--reference","c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequence.txt","--outdir","c:/Users/shade/Desktop/עבודות/ShomronLab/bolotie","--first-stage","align","--last-stage","plot"]
+            "args": ["--input", "c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/sequences.txt","--reference","c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/ref_sequence.txt","--outdir","c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie","--cluster","c:/Users/shade/Desktop/עבודות/ShomronLab/Mybolotie/ref_sequence.txt"]
         }
     ]
 }
