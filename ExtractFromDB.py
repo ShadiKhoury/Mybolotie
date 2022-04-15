@@ -22,6 +22,8 @@ try:
         df = pd.DataFrame(data,columns=['id','sequence','sample_id','clade'])
         print(df)
         clade_df=df[['sample_id','clade']]
+        list1 = clade_df.clade.unique()
+        clade_df['clade'] = clade_df['clade'].astype('category').cat.codes
         Seq_df=df[['sample_id','sequence']]
         print(clade_df)
         print(Seq_df)
